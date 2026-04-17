@@ -30,3 +30,6 @@ captures/
 
 # KSP generated files
 **/*.ksp
+
+# Privacy Policy (User requested to ignore)
+privacy_policy.md
