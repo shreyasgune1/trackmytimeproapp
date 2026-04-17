@@ -14,7 +14,7 @@ android {
         applicationId = "com.dreamdevelopersone.trackmytimepro"
         minSdk = 24
         targetSdk = 35
-        versionCode = 3
+        versionCode = 4
         versionName = "2.0-pro"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
