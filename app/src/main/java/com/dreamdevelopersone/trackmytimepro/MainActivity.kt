@@ -109,9 +109,11 @@ fun AppRoot(viewModel: TimeViewModel = hiltViewModel()) {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    when (targetTab) {
-                        0 -> TimerScreen(viewModel)
-                        1 -> AnalyticsScreen(viewModel, snackbarHostState)
+                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
+                        when (targetTab) {
+                            0 -> TimerScreen(viewModel)
+                            1 -> AnalyticsScreen(viewModel, snackbarHostState)
+                        }
                     }
                 }
             }
@@ -129,7 +131,11 @@ fun TimerScreen(viewModel: TimeViewModel) {
     val suggestions by viewModel.suggestions.collectAsState()
     
     LazyColumn(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+            .widthIn(max = 600.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         // 1. Hero Focus Section
@@ -279,7 +285,11 @@ fun AnalyticsScreen(viewModel: TimeViewModel, snackbarHostState: SnackbarHostSta
     val scope = rememberCoroutineScope()
 
     LazyColumn(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+            .widthIn(max = 800.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         item {
